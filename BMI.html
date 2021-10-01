@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>BMI Calculator</p>
+
+
+<!-- (A) HTML FORM -->
+
+<form>
+  Please enter your hight in inches:
+  <input type="number" id="inches" /> <br>
+  Please enter your weight in lbs:
+  <input type="number" id="lbs" "/> <br>
+
+</form>
+ 
+ <h2>Your BMI is:</h2>
+ 
+<p id="demo"></p>
+
+<button type="button" onclick='convert()'>Click Me!</button>
+
+
+<script>
+
+function convert() {
+  let hight = document.getElementById("inches").value;
+  let weight = document.getElementById("lbs").value;
+  let bmi = weight / hight**2 * 703;
+  let greeting;
+  document.getElementById("demo").innerHTML = bmi;
+  console.log(bmi);
+  if (bmi < 18.5) {
+  greeting = "you’re in the underweight range";
+} else if (bmi < 24.9) {
+  greeting = "you will be in a healthy weight range";
+
+} else if (bmi < 29.9) {
+  greeting = "you are overweight";
+  
+}
+document.getElementById("meaning").innerHTML = greeting;
+}
+  
+ </script>
+
+</body>
+</html>
+  
+  
+ 
